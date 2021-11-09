@@ -1,0 +1,45 @@
+.icon {
+    align-self: center;
+    overflow-x: auto;
+}
+
+
+.addressLine {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: fit-content;
+}
+
+.address {
+    justify-content: center;
+    text-decoration: none;
+    display: flex;
+    flex-flow: row;
+    line-height: 1;
+    color: black;
+}
+
+.address:active {
+    color: black;
+}
+
+.address > p {
+    overflow-y: hidden;
+}
+
+.hoursList {
+    text-align: center;
+}
+
+.hoursList > li {
+    list-style-position: inside;
+    list-style-type: none;
+}
+
+.contactNumbers {
+    text-decoration: none;
+    color: black;
+}
