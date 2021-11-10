@@ -1,6 +1,8 @@
 .formContainer {
     padding-bottom: 50px;
     margin: 0;
+    align-content: center;
+    justify-content: center;
 }
 
 .textCenter {
@@ -19,4 +21,20 @@
 #contactTextArea {
     width: 90vw;
     border: 1px solid black;
+}
+
+.formContainer > div > * {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.formContainer > div {
+    display: block;
+    justify-content: center;
+    align-content: center;
+}
+
+.formContainer > button {
+    color: black;
 }

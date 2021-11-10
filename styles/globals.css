@@ -124,12 +124,7 @@ align-self: center;
     -moz-box-sizing: border-box;
   }
 
-  #formSubmitButton {
-    background-color: var(--dirtBrown);
-    color: white;
-    padding: 2px;
-    margin: 0;
-  }
+
 /* Footer */
   #footer {
     

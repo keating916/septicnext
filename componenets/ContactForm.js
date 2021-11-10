@@ -13,6 +13,7 @@ export default class ContactForm extends Component {
             contactPhone: "",
             address: "",
             comments: "",
+            pcm: "",
             submitted: false,
             error: false
         }
@@ -29,8 +30,8 @@ export default class ContactForm extends Component {
 
     handleSubmit(evt) {
         evt.preventDefault()
-        let { fname, lname, contactEmail, contactPhone, address, comments } = this.state
-        let params = {fname: fname, lname:lname, contactEmail:contactEmail, contactPhone:contactPhone, address:address, comments:comments}
+        let { fname, lname, contactEmail, contactPhone, address, comments, pcm } = this.state
+        let params = {fname: fname, lname:lname, contactEmail:contactEmail, contactPhone:contactPhone, address:address, comments:comments, pcm:pcm, site:"Septic Install"}
         this.setState({
             ...this.state, 
             error: false
@@ -53,9 +54,9 @@ export default class ContactForm extends Component {
     }
 
     render() {
-        let { fname, lname, contactEmail, contactPhone, address, error } = this.state
+        let { fname, lname, contactEmail, contactPhone, address, error, pcm } = this.state
 
-        let d = (fname !== "" && lname !== "" && contactEmail !== "" && contactPhone !== "" && address !== "") ? false : true
+        let d = (fname !== "" && lname !== "" && contactEmail !== "" && contactPhone !== "" && address !== "" && pcm !== "") ? false : true
         if(!this.state.submitted) {
             return (
                 <div className={styles.main}>
@@ -69,6 +70,11 @@ export default class ContactForm extends Component {
                                 <input className={styles.formControl} type="phone" name="contactPhone" placeholder="Phone: 111-111-1111"  value={this.state.contactPhone}  required onChange={this.handleChange}  />
                                 <input className={styles.formControl} type="text" name="address" placeholder="Service Address"  value={this.state.address} onChange={this.handleChange}  required />
                                 <textarea name="comments" className={styles.formControl} placeholder="Comments" id="contactTextArea"  value={this.state.comments } onChange={this.handleChange}  ></textarea>
+                                <div>
+                                    <p>Preferred Contact Method:</p>
+                                    <label><input type="radio" name="pcm" value="email" onChange={this.handleChange} required/>Email</label>
+                                    <label><input type="radio" name="pcm" value="phone" onChange={this.handleChange} />Phone</label>
+                                </div>
                                 <button className={styles.formControl} type="submit" id="formSubmitButton" disabled={d} onClick={evt => this.handleSubmit(evt)}>Submit</button>
                             </form>
                     </div>
